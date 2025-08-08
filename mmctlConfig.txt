@@ -1,0 +1,11 @@
+bin/mmctl user create --local --email sma.hoque@just.edu.bd --username rocs --password rocsPassword --system_admin
+
+
+bin/mmctl user create --local --email sma.hoque@just.edu.bd --username rocs --password rocsPassword
+
+
+
+
+p3wi16iheffdbbg7ucqdkmt83c
+
+
