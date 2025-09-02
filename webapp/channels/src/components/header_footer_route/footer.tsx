@@ -26,48 +26,48 @@ const Footer = () => {
                 key='footer-copyright'
                 className='footer-copyright'
             >
-                {`© ${new Date().getFullYear()} Mattermost Inc.`}
+                {`© ${new Date().getFullYear()} ROCS`}
             </span>
-            {AboutLink && (
-                <ExternalLink
-                    key='footer-link-about'
-                    className='footer-link'
-                    href={AboutLink}
-                    location='footer'
-                >
-                    {formatMessage({id: 'web.footer.about', defaultMessage: 'About'})}
-                </ExternalLink>
-            )}
-            {PrivacyPolicyLink && (
-                <ExternalLink
-                    key='footer-link-privacy'
-                    className='footer-link'
-                    href={PrivacyPolicyLink}
-                    location='footer'
-                >
-                    {formatMessage({id: 'web.footer.privacy', defaultMessage: 'Privacy Policy'})}
-                </ExternalLink>
-            )}
-            {TermsOfServiceLink && (
-                <ExternalLink
-                    key='footer-link-terms'
-                    className='footer-link'
-                    href={TermsOfServiceLink}
-                    location='footer'
-                >
-                    {formatMessage({id: 'web.footer.terms', defaultMessage: 'Terms'})}
-                </ExternalLink>
-            )}
-            {HelpLink && (
-                <ExternalLink
-                    key='footer-link-help'
-                    className='footer-link'
-                    href={HelpLink}
-                    location='footer'
-                >
-                    {formatMessage({id: 'web.footer.help', defaultMessage: 'Help'})}
-                </ExternalLink>
-            )}
+            {/*{AboutLink && (*/}
+            {/*    <ExternalLink*/}
+            {/*        key='footer-link-about'*/}
+            {/*        className='footer-link'*/}
+            {/*        href={AboutLink}*/}
+            {/*        location='footer'*/}
+            {/*    >*/}
+            {/*        {formatMessage({id: 'web.footer.about', defaultMessage: 'About'})}*/}
+            {/*    </ExternalLink>*/}
+            {/*)}*/}
+            {/*{PrivacyPolicyLink && (*/}
+            {/*    <ExternalLink*/}
+            {/*        key='footer-link-privacy'*/}
+            {/*        className='footer-link'*/}
+            {/*        href={PrivacyPolicyLink}*/}
+            {/*        location='footer'*/}
+            {/*    >*/}
+            {/*        {formatMessage({id: 'web.footer.privacy', defaultMessage: 'Privacy Policy'})}*/}
+            {/*    </ExternalLink>*/}
+            {/*)}*/}
+            {/*{TermsOfServiceLink && (*/}
+            {/*    <ExternalLink*/}
+            {/*        key='footer-link-terms'*/}
+            {/*        className='footer-link'*/}
+            {/*        href={TermsOfServiceLink}*/}
+            {/*        location='footer'*/}
+            {/*    >*/}
+            {/*        {formatMessage({id: 'web.footer.terms', defaultMessage: 'Terms'})}*/}
+            {/*    </ExternalLink>*/}
+            {/*)}*/}
+            {/*{HelpLink && (*/}
+            {/*    <ExternalLink*/}
+            {/*        key='footer-link-help'*/}
+            {/*        className='footer-link'*/}
+            {/*        href={HelpLink}*/}
+            {/*        location='footer'*/}
+            {/*    >*/}
+            {/*        {formatMessage({id: 'web.footer.help', defaultMessage: 'Help'})}*/}
+            {/*    </ExternalLink>*/}
+            {/*)}*/}
         </div>
     );
 };

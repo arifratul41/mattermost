@@ -88,7 +88,7 @@ export default function InviteView(props: Props) {
     const {formatMessage} = useIntl();
 
     const inviteURL = useMemo(() => {
-        return `${getSiteURL()}/signup_user_complete/?id=${props.currentTeam.invite_id}&md=link&sbr=${trackFlowRole}`;
+        return `http://192.168.0.103:8065/signup_user_complete/?id=${props.currentTeam.invite_id}&md=link&sbr=${trackFlowRole}`;
     }, [props.currentTeam.invite_id, trackFlowRole]);
 
     const copyText = useCopyText({
@@ -209,72 +209,9 @@ export default function InviteView(props: Props) {
                 />
             </Modal.Header>
             <Modal.Body className='overflow-visible'>
-                <div className='InviteView__sectionTitle InviteView__sectionTitle--first'>
-                    <FormattedMessage
-                        id='invite_modal.to'
-                        defaultMessage='To:'
-                    />
-                </div>
-                <UsersEmailsInput
-                    {...errorProperties}
-                    usersLoader={props.usersLoader}
-                    placeholder={placeholder}
-                    ariaLabel={formatMessage({
-                        id: 'invitation_modal.members.search_and_add.title',
-                        defaultMessage: 'Invite People',
-                    })}
-                    onChange={(usersEmails: Array<UserProfile | string>) => {
-                        props.onChangeUsersEmails(usersEmails);
-                    }}
-                    value={props.usersEmails}
-                    validAddressMessage={validAddressMessage}
-                    noMatchMessage={noMatchMessage}
-                    onInputChange={props.onUsersInputChange}
-                    inputValue={props.usersEmailsSearch}
-                    emailInvitationsEnabled={props.emailInvitationsEnabled}
-                    autoFocus={true}
-                    onPaste={props.onPaste}
-                />
-                {props.canInviteGuests && props.canAddUsers &&
-                <InviteAs
-                    inviteType={props.inviteType}
-                    setInviteAs={props.setInviteAs}
-                    titleClass='InviteView__sectionTitle'
-                    canInviteGuests={props.canInviteGuests}
-                />
-                }
-                {(props.inviteType === InviteType.GUEST || (props.inviteType === InviteType.MEMBER && props.channelToInvite)) && (
-                    <AddToChannels
-                        setCustomMessage={props.setCustomMessage}
-                        toggleCustomMessage={props.toggleCustomMessage}
-                        customMessage={props.customMessage}
-                        onChannelsChange={props.onChannelsChange}
-                        onChannelsInputChange={props.onChannelsInputChange}
-                        inviteChannels={props.inviteChannels}
-                        channelsLoader={props.channelsLoader}
-                        currentChannel={props.currentChannel}
-                        townSquareDisplayName={props.townSquareDisplayName}
-                        titleClass='InviteView__sectionTitle'
-                        channelToInvite={props.channelToInvite}
-                        inviteType={props.inviteType}
-                    />
-                )}
-                <OverageUsersBannerNotice/>
+                <h3>{inviteURL}</h3>
             </Modal.Body>
-            <Modal.Footer className={classNames('InviteView__footer', props.footerClass, {'InviteView__footer-guest': props.inviteType === InviteType.GUEST})}>
-                {props.inviteType === InviteType.MEMBER && copyButton}
-                <button
-                    disabled={!isInviteValid}
-                    onClick={props.invite}
-                    className={'btn btn-primary'}
-                    data-testid={'inviteButton'}
-                >
-                    <FormattedMessage
-                        id='invite_modal.invite'
-                        defaultMessage='Invite'
-                    />
-                </button>
-            </Modal.Footer>
+
         </>
     );
 }
