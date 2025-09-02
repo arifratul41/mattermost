@@ -441,25 +441,9 @@ export default class LinkingLandingPage extends PureComponent<Props, State> {
     };
 
     render() {
-        const isMobile = UserAgent.isMobile();
+        // const isMobile = UserAgent.isMobile();
 
-        if (this.checkLandingPreferenceBrowser() || this.isEmbedded()) {
-            this.openInBrowser();
-            return null;
-        }
-
-        return (
-            <div className='get-app'>
-                {this.renderHeader()}
-                <div className='get-app__dialog'>
-                    <div
-                        className={`get-app__graphic ${isMobile ? 'mobile' : ''}`}
-                    >
-                        {this.renderGraphic()}
-                    </div>
-                    {this.renderDialogBody()}
-                </div>
-            </div>
-        );
+        this.openInBrowser();
+        return null;
     }
 }
